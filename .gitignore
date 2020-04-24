@@ -1,0 +1,6 @@
+.devcontainer
+.vscode
+*.obda
+*.properties
+catalog*.xml
+tmp
