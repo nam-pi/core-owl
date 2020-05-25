@@ -56,37 +56,31 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#assigns_appellation -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_appellation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#appellation_assignment"/>
+                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#birth"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#appellation"/>
+        <rdfs:label xml:lang="en">assigns appellation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#assigns_appellation_to -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_appellation_to">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#apellation_assignment"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#appellation_assignment"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">assigns appellation to</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#constitutes_group_membership_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#constitutes_group_membership_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_entry"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">constitutes group membership of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#constitutes_membership_in_group -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#constitutes_membership_in_group">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_entry"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
-        <rdfs:label xml:lang="en">constitutes membership in group</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -237,17 +231,6 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#is_assigned_in -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_assigned_in">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#appellation"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#apellation_assignment"/>
-        <rdfs:label xml:lang="en">is assigned in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://purl.org/nampi/owl/core#is_authored_by -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_authored_by">
@@ -282,6 +265,17 @@
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#object"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#object_creation"/>
         <rdfs:label xml:lang="en">is created in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#is_part_of -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_part_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
+        <rdfs:label xml:lang="en">is part of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -401,7 +395,6 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#terminates_group_membership_of">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_exit"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">terminates group membership of</rdfs:label>
     </owl:ObjectProperty>
@@ -413,7 +406,6 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#terminates_membership_in_group">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_exit"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
         <rdfs:label xml:lang="en">terminates membership in group</rdfs:label>
     </owl:ObjectProperty>
@@ -498,20 +490,20 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#apellation_assignment -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#apellation_assignment">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:comment xml:lang="en">Assigning an appellation can mean getting a name (for instance during a baptism or when entering a religious order) or an identifier (for instance when becoming a prisoner).</rdfs:comment>
-        <rdfs:label xml:lang="en">Apellation assignment</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://purl.org/nampi/owl/core#appellation -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#appellation">
         <rdfs:label xml:lang="en">Appellation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#appellation_assignment -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#appellation_assignment">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:comment xml:lang="en">Assigning an appellation can mean getting a name (for instance during a baptism or when entering a religious order) or an identifier (for instance when becoming a prisoner).</rdfs:comment>
+        <rdfs:label xml:lang="en">Appellation assignment</rdfs:label>
     </owl:Class>
     
 
@@ -567,30 +559,30 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#family_name -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#family_name">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#name"/>
+        <rdfs:label xml:lang="en">Family name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#given_name -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#given_name">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#name"/>
+        <rdfs:label xml:lang="en">Given name</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#group -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#group">
         <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#agent"/>
         <rdfs:comment xml:lang="en">Any group of agents</rdfs:comment>
         <rdfs:label xml:lang="en">Group</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#group_entry -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#group_entry">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:label xml:lang="en">Group entry</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#group_exit -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#group_exit">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:label xml:lang="en">Group exit</rdfs:label>
     </owl:Class>
     
 
@@ -721,6 +713,15 @@
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#temporal_entity">
         <rdfs:label xml:lang="en">Temporal entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#title -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#title">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#appellation"/>
+        <rdfs:label xml:lang="en">Title</rdfs:label>
     </owl:Class>
     
 
