@@ -5,10 +5,9 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:obda="https://w3id.org/obda/vocabulary#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.3"/>
+        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.4"/>
     </owl:Ontology>
     
 
@@ -24,63 +23,108 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#adds_group_status_as -->
+    <!-- https://purl.org/nampi/owl/core#adds_status_as -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#adds_group_status_as">
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_status_addition"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#status"/>
-        <rdfs:label xml:lang="en">adds group status as</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#adds_group_status_in -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#adds_group_status_in">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_status_addition"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
-        <rdfs:label xml:lang="en">adds group status in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#adds_group_status_to -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#adds_group_status_to">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_status_addition"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">adds group status to</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#assigns_appellation -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_appellation">
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#adds_status_as">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#status"/>
+        <rdfs:label xml:lang="en">adds status as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#assigns_name -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#name"/>
+        <rdfs:label xml:lang="en">assigns name</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#assigns_name_to -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_name_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
+        <rdfs:label xml:lang="en">assigns name to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#assigns_title -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_title">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#title"/>
+        <rdfs:label xml:lang="en">assigns title</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#assigns_title_to -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_title_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
+        <rdfs:label xml:lang="en">assigns title to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#changes_occupation_by -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_occupation_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#appellation_assignment"/>
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#birth"/>
+                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#group"/>
+                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#person"/>
                 </owl:unionOf>
             </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#appellation"/>
-        <rdfs:label xml:lang="en">assigns appellation</rdfs:label>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">changes occupation by</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#assigns_appellation_to -->
+    <!-- https://purl.org/nampi/owl/core#changes_occupation_of -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_appellation_to">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#appellation_assignment"/>
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_occupation_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">assigns appellation to</rdfs:label>
+        <rdfs:label xml:lang="en">changes occupation of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#changes_status_in -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_status_in">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
+        <rdfs:label xml:lang="en">changes status in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#changes_status_of -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_status_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
+        <rdfs:label xml:lang="en">changes status of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -88,67 +132,10 @@
     <!-- https://purl.org/nampi/owl/core#ends_life_of -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#ends_life_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#death"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">ends life of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#ends_occupation_as -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#ends_occupation_as">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#occupation_end"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#occupation"/>
-        <rdfs:label xml:lang="en">ends occupation as</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#ends_occupation_by -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#ends_occupation_by">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#occupation_end"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#agent"/>
-        <rdfs:label xml:lang="en">ends occupation by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#ends_occupation_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#ends_occupation_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#occupation_end"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">ends occupation of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#has_contributor -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_contributor">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#object_creation"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">has contributor</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#has_control_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_control_of">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#automated_agent"/>
-        <rdfs:label xml:lang="en">has control of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -157,20 +144,19 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_date">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#date"/>
         <rdfs:label xml:lang="en">has date</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#has_father -->
+    <!-- https://purl.org/nampi/owl/core#has_identifier -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_father">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#birth"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">has father</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_identifier">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#identifier"/>
+        <rdfs:label xml:lang="en">has identifier</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -178,7 +164,7 @@
     <!-- https://purl.org/nampi/owl/core#has_interpretation -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_interpretation">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#document_interpretation_act"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#temporal_entity"/>
         <rdfs:label xml:lang="en">has interpretation</rdfs:label>
@@ -186,25 +172,13 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#has_mother -->
+    <!-- https://purl.org/nampi/owl/core#has_place -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_mother">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#birth"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">has mother</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#has_participant -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_participant">
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_place">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#agent"/>
-        <rdfs:label xml:lang="en">has participant</rdfs:label>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#place"/>
+        <rdfs:label xml:lang="en">has place</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -212,7 +186,7 @@
     <!-- https://purl.org/nampi/owl/core#has_source -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_source">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#source_location"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#source"/>
         <rdfs:label xml:lang="en">has source</rdfs:label>
@@ -239,7 +213,7 @@
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#agent"/>
+                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#author"/>
                     <rdf:Description rdf:about="https://purl.org/nampi/owl/core#automated_agent"/>
                 </owl:unionOf>
             </owl:Class>
@@ -252,62 +226,32 @@
     <!-- https://purl.org/nampi/owl/core#is_authored_on -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_authored_on">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#document_interpretation_act"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#date"/>
         <rdfs:label xml:lang="en">is authored on</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#is_created_in -->
+    <!-- https://purl.org/nampi/owl/core#is_controlled_by -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_created_in">
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#object"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#object_creation"/>
-        <rdfs:label xml:lang="en">is created in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#is_part_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_part_of">
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_controlled_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
-        <rdfs:label xml:lang="en">is part of</rdfs:label>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#automated_agent"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#author"/>
+        <rdfs:label xml:lang="en">is controlled by</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#removes_group_status_as -->
+    <!-- https://purl.org/nampi/owl/core#removes_status_as -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_group_status_as">
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_status_removal"/>
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_status_as">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#status"/>
-        <rdfs:label xml:lang="en">removes group status as</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#removes_group_status_from -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_group_status_from">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_status_removal"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">removes group status from</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#removes_status_in_group -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_status_in_group">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#group_status_removal"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
-        <rdfs:label xml:lang="en">removes status in group</rdfs:label>
+        <rdfs:label xml:lang="en">removes status as</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -315,8 +259,7 @@
     <!-- https://purl.org/nampi/owl/core#starts_life_of -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#starts_life_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#birth"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">starts life of</rdfs:label>
@@ -327,32 +270,21 @@
     <!-- https://purl.org/nampi/owl/core#starts_occupation_as -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#starts_occupation_as">
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#occupation_start"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#occupation"/>
         <rdfs:label xml:lang="en">starts occupation as</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#starts_occupation_by -->
+    <!-- https://purl.org/nampi/owl/core#stops_occupation_as -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#starts_occupation_by">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#occupation_start"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#agent"/>
-        <rdfs:label xml:lang="en">starts occupation by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#starts_occupation_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#starts_occupation_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#occupation_start"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">starts occupation of</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#stops_occupation_as">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#occupation"/>
+        <rdfs:label xml:lang="en">stops occupation as</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -360,10 +292,26 @@
     <!-- https://purl.org/nampi/owl/core#takes_place_at -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#takes_place_at">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#place"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_place"/>
         <rdfs:label xml:lang="en">takes place at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#takes_place_not_earlier_than -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#takes_place_not_earlier_than">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date"/>
+        <rdfs:label xml:lang="en">takes place not earlier than</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#takes_place_not_later_than -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#takes_place_not_later_than">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date"/>
+        <rdfs:label xml:lang="en">takes place not later than</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -372,42 +320,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#takes_place_on">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#date"/>
         <rdfs:label xml:lang="en">takes place on</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#takes_place_sometime_between -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#takes_place_sometime_between">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#unclear_date"/>
-        <rdfs:label xml:lang="en">takes place sometime between</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#terminates_group_membership_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#terminates_group_membership_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">terminates group membership of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#terminates_membership_in_group -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#terminates_membership_in_group">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
-        <rdfs:label xml:lang="en">terminates membership in group</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -423,39 +336,21 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#has_date_time_representation -->
+    <!-- https://purl.org/nampi/owl/core#has_xsd_date_time -->
 
-    <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_date_time_representation">
+    <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_xsd_date_time">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#date"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label xml:lang="en">has DateTime representation</rdfs:label>
+        <rdfs:label xml:lang="en">has xsd:dateTime</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#has_earliest_possible_date_time_representation -->
+    <!-- https://purl.org/nampi/owl/core#has_xsd_string -->
 
-    <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_earliest_possible_date_time_representation">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date_time_representation"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#unclear_date"/>
-        <rdfs:label xml:lang="en">has earliest possible DateTime representation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#has_latest_possible_date_time_representation -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_latest_possible_date_time_representation">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date_time_representation"/>
-        <rdfs:label xml:lang="en">has latest possible dateTime representation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#has_string_representation -->
-
-    <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_string_representation">
+    <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_xsd_string">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -465,7 +360,7 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has string representation</rdfs:label>
+        <rdfs:label xml:lang="en">has xsd:string</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -481,15 +376,6 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#agent -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#agent">
-        <rdfs:comment xml:lang="en">An entity that is able to act on it&apos;s own behalf.</rdfs:comment>
-        <rdfs:label xml:lang="en">Agent</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://purl.org/nampi/owl/core#appellation -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#appellation">
@@ -498,12 +384,11 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#appellation_assignment -->
+    <!-- https://purl.org/nampi/owl/core#author -->
 
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#appellation_assignment">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:comment xml:lang="en">Assigning an appellation can mean getting a name (for instance during a baptism or when entering a religious order) or an identifier (for instance when becoming a prisoner).</rdfs:comment>
-        <rdfs:label xml:lang="en">Appellation assignment</rdfs:label>
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#author">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#person"/>
+        <rdfs:label xml:lang="en">Author</rdfs:label>
     </owl:Class>
     
 
@@ -559,6 +444,24 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#family -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#family">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#group"/>
+        <rdfs:label xml:lang="en">Family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#family_member -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#family_member">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#status"/>
+        <rdfs:label xml:lang="en">Family member</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#family_name -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#family_name">
@@ -580,27 +483,7 @@
     <!-- https://purl.org/nampi/owl/core#group -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#group">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#agent"/>
-        <rdfs:comment xml:lang="en">Any group of agents</rdfs:comment>
         <rdfs:label xml:lang="en">Group</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#group_status_addition -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#group_status_addition">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:label xml:lang="en">Group status addition</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#group_status_removal -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#group_status_removal">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:label xml:lang="en">Group status removal</rdfs:label>
     </owl:Class>
     
 
@@ -623,24 +506,6 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#object -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#object">
-        <rdfs:comment xml:lang="en">A thing that can be created, owned or destroyed.</rdfs:comment>
-        <rdfs:label xml:lang="en">Object</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#object_creation -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#object_creation">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:label xml:lang="en">Object creation</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://purl.org/nampi/owl/core#occupation -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#occupation">
@@ -649,29 +514,9 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#occupation_end -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#occupation_end">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:label xml:lang="en">Occupation end</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#occupation_start -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#occupation_start">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:label xml:lang="en">Occupation start</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- https://purl.org/nampi/owl/core#person -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#person">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#agent"/>
-        <rdfs:comment xml:lang="en">A natural person.</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
@@ -722,15 +567,6 @@
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#title">
         <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#appellation"/>
         <rdfs:label xml:lang="en">Title</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#unclear_date -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#unclear_date">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#date"/>
-        <rdfs:label xml:lang="en">Unclear date</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
