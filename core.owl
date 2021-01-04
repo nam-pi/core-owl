@@ -256,6 +256,24 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#is_part_of -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_part_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#group"/>
+                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
+        <rdfs:label xml:lang="en">is part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#removes_status -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_status">
