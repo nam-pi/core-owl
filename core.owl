@@ -165,6 +165,17 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#has_online_source -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_online_source">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_source"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#online_resource"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#online_source"/>
+        <rdfs:label xml:lang="en">has online source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#has_participant -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_participant">
@@ -364,6 +375,16 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#has_url -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_url">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_xsd_string"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#online_resource"/>
+        <rdfs:label xml:lang="en">has URL</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#has_xsd_date_time -->
 
     <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_xsd_date_time">
@@ -495,6 +516,24 @@
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#occupation">
         <rdfs:label xml:lang="en">Occupation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#online_resource -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#online_resource">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#source_location"/>
+        <rdfs:label xml:lang="en">Online resource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#online_source -->
+
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#online_source">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#source"/>
+        <rdfs:label xml:lang="en">Online source</rdfs:label>
     </owl:Class>
     
 
