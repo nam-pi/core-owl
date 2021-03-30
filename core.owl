@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.4"/>
+        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.5"/>
     </owl:Ontology>
     
 
@@ -26,9 +26,7 @@
     <!-- https://purl.org/nampi/owl/core#adds_status -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#adds_status">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#status"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_status"/>
         <rdfs:label xml:lang="en">adds status</rdfs:label>
     </owl:ObjectProperty>
     
@@ -214,6 +212,15 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#has_sorting_date -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_sorting_date">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date"/>
+        <rdfs:label xml:lang="en">has sorting date</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#has_source -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_source">
@@ -297,9 +304,7 @@
     <!-- https://purl.org/nampi/owl/core#removes_status -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_status">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#status"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_status"/>
         <rdfs:label xml:lang="en">removes status</rdfs:label>
     </owl:ObjectProperty>
     
@@ -318,9 +323,7 @@
     <!-- https://purl.org/nampi/owl/core#starts_occupation -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#starts_occupation">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#occupation"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_occupation"/>
         <rdfs:label xml:lang="en">starts occupation</rdfs:label>
     </owl:ObjectProperty>
     
@@ -329,9 +332,7 @@
     <!-- https://purl.org/nampi/owl/core#stops_occupation -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#stops_occupation">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#occupation"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_occupation"/>
         <rdfs:label xml:lang="en">stops occupation</rdfs:label>
     </owl:ObjectProperty>
     
@@ -369,6 +370,28 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#takes_place_on">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_date"/>
         <rdfs:label xml:lang="en">takes place on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#uses_occupation -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#uses_occupation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#occupation"/>
+        <rdfs:label xml:lang="en">uses occupation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#uses_status -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#uses_status">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#status"/>
+        <rdfs:label xml:lang="en">uses status</rdfs:label>
     </owl:ObjectProperty>
     
 
