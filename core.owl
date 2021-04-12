@@ -188,14 +188,7 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_participant">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#group"/>
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#agent"/>
         <rdfs:label xml:lang="en">has participant</rdfs:label>
     </owl:ObjectProperty>
     
@@ -248,14 +241,7 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_authored_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#document_interpretation_act"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#author"/>
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#automated_agent"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#author"/>
         <rdfs:label xml:lang="en">is authored by</rdfs:label>
     </owl:ObjectProperty>
     
@@ -276,7 +262,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_controlled_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#automated_agent"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#automated_author"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#author"/>
         <rdfs:label xml:lang="en">is controlled by</rdfs:label>
     </owl:ObjectProperty>
@@ -287,14 +273,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_part_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#group"/>
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#agent"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
         <rdfs:label xml:lang="en">is part of</rdfs:label>
     </owl:ObjectProperty>
@@ -477,17 +456,16 @@
     <!-- https://purl.org/nampi/owl/core#author -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#author">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">Author</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#automated_agent -->
+    <!-- https://purl.org/nampi/owl/core#automated_author -->
 
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#automated_agent">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#agent"/>
-        <rdfs:label xml:lang="en">Automated agent</rdfs:label>
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#automated_author">
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#author"/>
+        <rdfs:label xml:lang="en">Automated author</rdfs:label>
     </owl:Class>
     
 
