@@ -23,100 +23,29 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#adds_status -->
+    <!-- https://purl.org/nampi/owl/core#adds_aspect -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#adds_status">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_status"/>
-        <rdfs:label xml:lang="en">adds status</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#assigns_name -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_name">
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#adds_aspect">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_aspect"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#name"/>
-        <rdfs:label xml:lang="en">assigns name</rdfs:label>
+        <rdfs:label xml:lang="en">adds aspect</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#assigns_name_to -->
+    <!-- https://purl.org/nampi/owl/core#changes_aspect_of -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_name_to">
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_aspect_of">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">assigns name to</rdfs:label>
+        <rdfs:label xml:lang="en">changes aspect of</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#assigns_title -->
+    <!-- https://purl.org/nampi/owl/core#changes_aspect_related_to -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_title">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_aspect"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#title"/>
-        <rdfs:label xml:lang="en">assigns title</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#assigns_title_to -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#assigns_title_to">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">assigns title to</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#changes_occupation_by -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_occupation_by">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
-        <rdfs:range>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#group"/>
-                    <rdf:Description rdf:about="https://purl.org/nampi/owl/core#person"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:range>
-        <rdfs:label xml:lang="en">changes occupation by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#changes_occupation_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_occupation_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">changes occupation of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#changes_status_in -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_status_in">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
-        <rdfs:label xml:lang="en">changes status in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#changes_status_of -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_status_of">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
-        <rdfs:label xml:lang="en">changes status of</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_aspect_related_to">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
+        <rdfs:label xml:lang="en">changes aspect related to</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -167,6 +96,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_main_participant">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">has main participant</rdfs:label>
     </owl:ObjectProperty>
     
@@ -280,11 +210,11 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#removes_status -->
+    <!-- https://purl.org/nampi/owl/core#removes_aspect -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_status">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_status"/>
-        <rdfs:label xml:lang="en">removes status</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#removes_aspect">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_aspect"/>
+        <rdfs:label xml:lang="en">removes aspect</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -295,24 +225,6 @@
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">starts life of</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#starts_occupation -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#starts_occupation">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_occupation"/>
-        <rdfs:label xml:lang="en">starts occupation</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#stops_occupation -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#stops_occupation">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_occupation"/>
-        <rdfs:label xml:lang="en">stops occupation</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -360,28 +272,6 @@
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#temporal_entity"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#aspect"/>
         <rdfs:label xml:lang="en">uses aspect</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#uses_occupation -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#uses_occupation">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_aspect"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#occupation"/>
-        <rdfs:label xml:lang="en">uses occupation</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#uses_status -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#uses_status">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#uses_aspect"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#status"/>
-        <rdfs:label xml:lang="en">uses status</rdfs:label>
     </owl:ObjectProperty>
     
 
