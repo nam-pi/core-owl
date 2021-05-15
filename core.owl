@@ -368,6 +368,15 @@
     
 
 
+    <!-- https://purl.org/nampi/owl/core#same_as -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#same_as">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="en">same as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://purl.org/nampi/owl/core#starts_life_of -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#starts_life_of">
@@ -460,7 +469,7 @@
     <!-- https://purl.org/nampi/owl/core#has_url -->
 
     <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_url">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_value"/>
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_text"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#online_resource"/>
         <rdfs:label xml:lang="en">has URL</rdfs:label>
         <rdfs:label xml:lang="en">has value</rdfs:label>
