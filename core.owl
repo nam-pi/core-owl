@@ -449,7 +449,6 @@
 
     <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_date_time">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_value"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#date"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:label xml:lang="en">has dateTime</rdfs:label>
     </owl:DatatypeProperty>
@@ -460,7 +459,6 @@
 
     <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_text">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_value"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#aspect"/>
         <rdfs:label xml:lang="en">has text</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -470,7 +468,6 @@
 
     <owl:DatatypeProperty rdf:about="https://purl.org/nampi/owl/core#has_url">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_text"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#online_resource"/>
         <rdfs:label xml:lang="en">has URL</rdfs:label>
         <rdfs:label xml:lang="en">has value</rdfs:label>
     </owl:DatatypeProperty>
