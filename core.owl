@@ -85,6 +85,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_aspect_related_to">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
         <rdfs:label xml:lang="en">changes aspect related to</rdfs:label>
     </owl:ObjectProperty>
     
@@ -126,6 +127,17 @@
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">ends life of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#has_as_parent -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_as_parent">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
+        <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#is_parent_in"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#person"/>
+        <rdfs:label xml:lang="en">has as parent</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -317,6 +329,15 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_main_participant_in">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#participates_in"/>
         <rdfs:label xml:lang="en">is main participant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#is_parent_in -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_parent_in">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#participates_in"/>
+        <rdfs:label xml:lang="en">is parent in</rdfs:label>
     </owl:ObjectProperty>
     
 
