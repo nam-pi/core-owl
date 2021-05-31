@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.7"/>
+        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.8"/>
     </owl:Ontology>
     
 
@@ -76,6 +76,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_aspect_of">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_main_participant"/>
+        <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#has_aspect_changed_in"/>
         <rdfs:label xml:lang="en">changes aspect of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -85,6 +86,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#changes_aspect_related_to">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
+        <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#is_related_to_changed_aspect_in"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
         <rdfs:label xml:lang="en">changes aspect related to</rdfs:label>
     </owl:ObjectProperty>
@@ -142,11 +144,11 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#has_aspect_changed_by -->
+    <!-- https://purl.org/nampi/owl/core#has_aspect_changed_in -->
 
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_aspect_changed_by">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#participates_in"/>
-        <rdfs:label xml:lang="en">has aspect changed by</rdfs:label>
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_aspect_changed_in">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#is_main_participant_in"/>
+        <rdfs:label xml:lang="en">has aspect changed in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -358,6 +360,15 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_place_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:label xml:lang="en">is place of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#is_related_to_changed_aspect_in -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_related_to_changed_aspect_in">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#participates_in"/>
+        <rdfs:label xml:lang="en">is related to changed aspect in</rdfs:label>
     </owl:ObjectProperty>
     
 
