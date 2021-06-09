@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.8"/>
+        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.9"/>
     </owl:Ontology>
     
 
@@ -157,7 +157,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_date">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#temporal_entity"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#date"/>
         <rdfs:label xml:lang="en">has date</rdfs:label>
     </owl:ObjectProperty>
@@ -180,7 +180,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#is_interpretation_of"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#act"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#temporal_entity"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#event"/>
         <rdfs:label xml:lang="en">has interpretation</rdfs:label>
     </owl:ObjectProperty>
     
@@ -224,7 +224,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#participates_in"/>
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#agent"/>
+        <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#actor"/>
         <rdfs:label xml:lang="en">has participant</rdfs:label>
     </owl:ObjectProperty>
     
@@ -235,7 +235,7 @@
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_place">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#is_place_of"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#temporal_entity"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#place"/>
         <rdfs:label xml:lang="en">has place</rdfs:label>
     </owl:ObjectProperty>
@@ -348,7 +348,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_part_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#agent"/>
+        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#actor"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#group"/>
         <rdfs:label xml:lang="en">is part of</rdfs:label>
     </owl:ObjectProperty>
@@ -459,7 +459,6 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#uses_aspect">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#temporal_entity"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#aspect"/>
         <rdfs:label xml:lang="en">uses aspect</rdfs:label>
     </owl:ObjectProperty>
@@ -529,15 +528,17 @@
     <!-- https://purl.org/nampi/owl/core#act -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#act">
-        <rdfs:label xml:lang="en">Document interpretation act</rdfs:label>
+        <rdfs:comment xml:lang="en">A Document-Interpretation-Act as described in Michele Pasin and John Bradley, Factoid-based Prosopography and Computer Ontologies:
+Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (2015) 86-97.</rdfs:comment>
+        <rdfs:label xml:lang="en">Act</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- https://purl.org/nampi/owl/core#agent -->
+    <!-- https://purl.org/nampi/owl/core#actor -->
 
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#agent">
-        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <owl:Class rdf:about="https://purl.org/nampi/owl/core#actor">
+        <rdfs:label xml:lang="en">Actor</rdfs:label>
     </owl:Class>
     
 
@@ -587,7 +588,6 @@
     <!-- https://purl.org/nampi/owl/core#event -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#event">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#temporal_entity"/>
         <rdfs:label xml:lang="en">Event</rdfs:label>
     </owl:Class>
     
@@ -596,7 +596,7 @@
     <!-- https://purl.org/nampi/owl/core#group -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#group">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#agent"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#actor"/>
         <rdfs:label xml:lang="en">Group</rdfs:label>
     </owl:Class>
     
@@ -650,7 +650,7 @@
     <!-- https://purl.org/nampi/owl/core#person -->
 
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#person">
-        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#agent"/>
+        <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#actor"/>
         <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
@@ -685,14 +685,6 @@
     <owl:Class rdf:about="https://purl.org/nampi/owl/core#status">
         <rdfs:subClassOf rdf:resource="https://purl.org/nampi/owl/core#aspect"/>
         <rdfs:label xml:lang="en">Status</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- https://purl.org/nampi/owl/core#temporal_entity -->
-
-    <owl:Class rdf:about="https://purl.org/nampi/owl/core#temporal_entity">
-        <rdfs:label xml:lang="en">Temporal entity</rdfs:label>
     </owl:Class>
     
 
