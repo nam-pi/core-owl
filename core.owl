@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.11"/>
+        <owl:versionIRI rdf:resource="https://purl.org/nampi/owl/core/0.0.12"/>
     </owl:Ontology>
     
 
@@ -122,16 +122,6 @@
     
 
 
-    <!-- https://purl.org/nampi/owl/core#has_as_parent -->
-
-    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_as_parent">
-        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
-        <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#is_parent_in"/>
-        <rdfs:label xml:lang="en">has as parent</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://purl.org/nampi/owl/core#has_date -->
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_date">
@@ -183,6 +173,16 @@
         <rdfs:domain rdf:resource="https://purl.org/nampi/owl/core#online_resource"/>
         <rdfs:range rdf:resource="https://purl.org/nampi/owl/core#online_source"/>
         <rdfs:label xml:lang="en">has online source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://purl.org/nampi/owl/core#has_parent -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#has_parent">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#has_participant"/>
+        <owl:inverseOf rdf:resource="https://purl.org/nampi/owl/core#is_parent_in"/>
+        <rdfs:label xml:lang="en">has parent</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -309,7 +309,7 @@
 
     <owl:ObjectProperty rdf:about="https://purl.org/nampi/owl/core#is_main_participant_in">
         <rdfs:subPropertyOf rdf:resource="https://purl.org/nampi/owl/core#participates_in"/>
-        <rdfs:label xml:lang="en">is main participant</rdfs:label>
+        <rdfs:label xml:lang="en">is main participant in</rdfs:label>
     </owl:ObjectProperty>
     
 
