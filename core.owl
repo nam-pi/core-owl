@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.1.0"/>
+        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.1.1"/>
     </owl:Ontology>
     
 
@@ -162,17 +162,6 @@
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_main_participant_in"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#person"/>
         <rdfs:label xml:lang="en">has main participant</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#has_online_source -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_online_source">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nampi/owl/core#has_source"/>
-        <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#online_resource"/>
-        <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#online_source"/>
-        <rdfs:label xml:lang="en">has online source</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -523,16 +512,6 @@
     
 
 
-    <!-- http://purl.org/nampi/owl/core#has_url -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/nampi/owl/core#has_url">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nampi/owl/core#has_text"/>
-        <rdfs:label xml:lang="en">has URL</rdfs:label>
-        <rdfs:label xml:lang="en">has value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://purl.org/nampi/owl/core#has_value -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/nampi/owl/core#has_value">
@@ -653,15 +632,6 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#occupation">
         <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#aspect"/>
         <rdfs:label xml:lang="en">Occupation</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#online_resource -->
-
-    <owl:Class rdf:about="http://purl.org/nampi/owl/core#online_resource">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#source_location"/>
-        <rdfs:label xml:lang="en">Online resource</rdfs:label>
     </owl:Class>
     
 
