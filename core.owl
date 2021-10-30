@@ -5,9 +5,11 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.1.2"/>
+        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.2.0"/>
+        <owl:imports rdf:resource="http://erlangen-crm.org/211015/"/>
     </owl:Ontology>
     
 
@@ -511,9 +513,66 @@
     
 
 
+    <!-- http://erlangen-crm.org/211015/E13_Attribute_Assignment -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E13_Attribute_Assignment"/>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E21_Person -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E21_Person">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E39_Actor -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E39_Actor">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E42_Identifier -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E42_Identifier"/>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E52_Time-Span -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E52_Time-Span"/>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E53_Place -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E53_Place">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E5_Event -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E5_Event"/>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E74_Group -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E74_Group">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#group"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/nampi/owl/core#act -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#act">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E13_Attribute_Assignment"/>
         <rdfs:comment xml:lang="en">A Document-Interpretation-Act as described in Michele Pasin and John Bradley, Factoid-based Prosopography and Computer Ontologies:
 Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (2015) 86-97.</rdfs:comment>
         <rdfs:label xml:lang="en">Act</rdfs:label>
@@ -541,6 +600,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#aspect -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#aspect">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E89_Propositional_Object"/>
         <rdfs:label xml:lang="en">Aspect</rdfs:label>
     </owl:Class>
     
@@ -549,6 +609,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#author -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#author">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#actor"/>
         <rdfs:label xml:lang="en">Author</rdfs:label>
     </owl:Class>
     
@@ -557,6 +618,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#date -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#date">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E52_Time-Span"/>
         <rdfs:label xml:lang="en">Date</rdfs:label>
     </owl:Class>
     
@@ -565,6 +627,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#event -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#event">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E5_Event"/>
         <rdfs:label xml:lang="en">Event</rdfs:label>
     </owl:Class>
     
@@ -635,6 +698,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#source -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#source">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E31_Document"/>
         <rdfs:label xml:lang="en">Source</rdfs:label>
     </owl:Class>
     
@@ -643,6 +707,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#source_location -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#source_location">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E42_Identifier"/>
         <rdfs:label xml:lang="en">Source location</rdfs:label>
     </owl:Class>
     
@@ -660,7 +725,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#title -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#title">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#aspect"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#appellation"/>
         <rdfs:label xml:lang="en">Title</rdfs:label>
     </owl:Class>
 </rdf:RDF>
