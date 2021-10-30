@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.1.1"/>
+        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.1.2"/>
     </owl:Ontology>
     
 
@@ -88,16 +88,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#has_source"/>
         <rdfs:label xml:lang="en">contains source location</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#controls -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#controls">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_controlled_by"/>
-        <rdfs:label xml:lang="en">controls</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -280,17 +270,6 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.org/nampi/owl/core#is_main_participant_in"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#starts_life_of"/>
         <rdfs:label xml:lang="en">is born in</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#is_controlled_by -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_controlled_by">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#automated_author"/>
-        <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#author"/>
-        <rdfs:label xml:lang="en">is controlled by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -571,15 +550,6 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#author">
         <rdfs:label xml:lang="en">Author</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#automated_author -->
-
-    <owl:Class rdf:about="http://purl.org/nampi/owl/core#automated_author">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#author"/>
-        <rdfs:label xml:lang="en">Automated author</rdfs:label>
     </owl:Class>
     
 
