@@ -515,7 +515,9 @@
 
     <!-- http://erlangen-crm.org/211015/E13_Attribute_Assignment -->
 
-    <owl:Class rdf:about="http://erlangen-crm.org/211015/E13_Attribute_Assignment"/>
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E13_Attribute_Assignment">
+        <rdfs:label xml:lang="en">E13 Attribute Assignment</rdfs:label>
+    </owl:Class>
     
 
 
@@ -523,7 +525,16 @@
 
     <owl:Class rdf:about="http://erlangen-crm.org/211015/E21_Person">
         <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#person"/>
+        <rdfs:label xml:lang="en">E21 Person</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E31_Document -->
+
+    <rdf:Description rdf:about="http://erlangen-crm.org/211015/E31_Document">
+        <rdfs:label xml:lang="en">E31 Document</rdfs:label>
+    </rdf:Description>
     
 
 
@@ -531,19 +542,24 @@
 
     <owl:Class rdf:about="http://erlangen-crm.org/211015/E39_Actor">
         <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#actor"/>
+        <rdfs:label xml:lang="en">E39 Actor</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://erlangen-crm.org/211015/E42_Identifier -->
 
-    <owl:Class rdf:about="http://erlangen-crm.org/211015/E42_Identifier"/>
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E42_Identifier">
+        <rdfs:label xml:lang="en">E42 Identifier</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://erlangen-crm.org/211015/E52_Time-Span -->
 
-    <owl:Class rdf:about="http://erlangen-crm.org/211015/E52_Time-Span"/>
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E52_Time-Span">
+        <rdfs:label xml:lang="en">E52 Time-Span</rdfs:label>
+    </owl:Class>
     
 
 
@@ -551,13 +567,16 @@
 
     <owl:Class rdf:about="http://erlangen-crm.org/211015/E53_Place">
         <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#place"/>
+        <rdfs:label xml:lang="en">E53 Place</rdfs:label>
     </owl:Class>
     
 
 
     <!-- http://erlangen-crm.org/211015/E5_Event -->
 
-    <owl:Class rdf:about="http://erlangen-crm.org/211015/E5_Event"/>
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E5_Event">
+        <rdfs:label xml:lang="en">E5 Event</rdfs:label>
+    </owl:Class>
     
 
 
@@ -565,7 +584,16 @@
 
     <owl:Class rdf:about="http://erlangen-crm.org/211015/E74_Group">
         <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#group"/>
+        <rdfs:label xml:lang="en">E74 Group</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E89_Propositional_Object -->
+
+    <rdf:Description rdf:about="http://erlangen-crm.org/211015/E89_Propositional_Object">
+        <rdfs:label xml:lang="en">E89 Propositional Object</rdfs:label>
+    </rdf:Description>
     
 
 
