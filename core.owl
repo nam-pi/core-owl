@@ -5,9 +5,11 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="http://purl.org/nampi/owl/core">
-        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.1.1"/>
+        <owl:versionIRI rdf:resource="http://purl.org/nampi/owl/core/0.2.0"/>
+        <owl:imports rdf:resource="http://erlangen-crm.org/211015/"/>
     </owl:Ontology>
     
 
@@ -55,6 +57,7 @@
     <!-- http://purl.org/nampi/owl/core#aspect_is_used_in -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#aspect_is_used_in">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P67i_is_referred_to_by"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#uses_aspect"/>
         <rdfs:label xml:lang="en">aspect is used in</rdfs:label>
@@ -65,6 +68,7 @@
     <!-- http://purl.org/nampi/owl/core#authors -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#authors">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P14i_performed"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_authored_by"/>
         <rdfs:label xml:lang="en">authors</rdfs:label>
@@ -85,19 +89,10 @@
     <!-- http://purl.org/nampi/owl/core#contains_source_location -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#contains_source_location">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P165_incorporates"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#has_source"/>
         <rdfs:label xml:lang="en">contains source location</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#controls -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#controls">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_controlled_by"/>
-        <rdfs:label xml:lang="en">controls</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -125,6 +120,7 @@
     <!-- http://purl.org/nampi/owl/core#has_date -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_date">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P129_is_about"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#date"/>
@@ -133,19 +129,10 @@
     
 
 
-    <!-- http://purl.org/nampi/owl/core#has_identifier -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_identifier">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#identifier"/>
-        <rdfs:label xml:lang="en">has identifier</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/nampi/owl/core#has_interpretation -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_interpretation">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P140_assigned_attribute_to"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_interpretation_of"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#act"/>
@@ -189,6 +176,7 @@
     <!-- http://purl.org/nampi/owl/core#has_part -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_part">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P107_has_current_or_former_member"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_part_of"/>
         <rdfs:label xml:lang="en">has part</rdfs:label>
@@ -199,23 +187,12 @@
     <!-- http://purl.org/nampi/owl/core#has_participant -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_participant">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P129_is_about"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#participates_in"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#actor"/>
         <rdfs:label xml:lang="en">has participant</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#has_place -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_place">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_place_of"/>
-        <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#event"/>
-        <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#place"/>
-        <rdfs:label xml:lang="en">has place</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -232,6 +209,7 @@
     <!-- http://purl.org/nampi/owl/core#has_source -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_source">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P165i_is_incorporated_in"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#source_location"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#source"/>
@@ -243,6 +221,7 @@
     <!-- http://purl.org/nampi/owl/core#has_source_location -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#has_source_location">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P16_used_specific_object"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#is_source_location_for"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#act"/>
@@ -255,6 +234,7 @@
     <!-- http://purl.org/nampi/owl/core#is_authored_by -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_authored_by">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P14_carried_out_by"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#act"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#author"/>
@@ -266,6 +246,7 @@
     <!-- http://purl.org/nampi/owl/core#is_authored_on -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_authored_on">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P4_has_time-span"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#act"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#date"/>
@@ -284,20 +265,10 @@
     
 
 
-    <!-- http://purl.org/nampi/owl/core#is_controlled_by -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_controlled_by">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#automated_author"/>
-        <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#author"/>
-        <rdfs:label xml:lang="en">is controlled by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/nampi/owl/core#is_interpretation_of -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_interpretation_of">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P140i_was_attributed_by"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:label xml:lang="en">is interpretation of</rdfs:label>
     </owl:ObjectProperty>
@@ -334,6 +305,7 @@
     <!-- http://purl.org/nampi/owl/core#is_part_of -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_part_of">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P107i_is_current_or_former_member_of"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#actor"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#group"/>
@@ -345,7 +317,9 @@
     <!-- http://purl.org/nampi/owl/core#is_place_of -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_place_of">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P129i_is_subject_of"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://purl.org/nampi/owl/core#takes_place_at"/>
         <rdfs:label xml:lang="en">is place of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -363,6 +337,7 @@
     <!-- http://purl.org/nampi/owl/core#is_source_location_for -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#is_source_location_for">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P16i_was_used_for"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:label xml:lang="en">is source location for</rdfs:label>
     </owl:ObjectProperty>
@@ -372,6 +347,7 @@
     <!-- http://purl.org/nampi/owl/core#participates_in -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#participates_in">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P129i_is_subject_of"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:label xml:lang="en">participates in</rdfs:label>
     </owl:ObjectProperty>
@@ -409,7 +385,10 @@
     <!-- http://purl.org/nampi/owl/core#takes_place_at -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#takes_place_at">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/nampi/owl/core#has_place"/>
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P129_is_about"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#event"/>
+        <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#place"/>
         <rdfs:label xml:lang="en">takes place at</rdfs:label>
     </owl:ObjectProperty>
     
@@ -445,7 +424,9 @@
     <!-- http://purl.org/nampi/owl/core#uses_aspect -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/nampi/owl/core#uses_aspect">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/211015/P67_refers_to"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/nampi/owl/core#event"/>
         <rdfs:range rdf:resource="http://purl.org/nampi/owl/core#aspect"/>
         <rdfs:label xml:lang="en">uses aspect</rdfs:label>
     </owl:ObjectProperty>
@@ -532,9 +513,54 @@
     
 
 
+    <!-- http://erlangen-crm.org/211015/E13_Attribute_Assignment -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E13_Attribute_Assignment"/>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E21_Person -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E21_Person">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E39_Actor -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E39_Actor">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E52_Time-Span -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E52_Time-Span"/>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E53_Place -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E53_Place">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#place"/>
+    </owl:Class>
+    
+
+
+    <!-- http://erlangen-crm.org/211015/E74_Group -->
+
+    <owl:Class rdf:about="http://erlangen-crm.org/211015/E74_Group">
+        <owl:equivalentClass rdf:resource="http://purl.org/nampi/owl/core#group"/>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/nampi/owl/core#act -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#act">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E13_Attribute_Assignment"/>
         <rdfs:comment xml:lang="en">A Document-Interpretation-Act as described in Michele Pasin and John Bradley, Factoid-based Prosopography and Computer Ontologies:
 Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (2015) 86-97.</rdfs:comment>
         <rdfs:label xml:lang="en">Act</rdfs:label>
@@ -562,6 +588,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#aspect -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#aspect">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E70_Thing"/>
         <rdfs:label xml:lang="en">Aspect</rdfs:label>
     </owl:Class>
     
@@ -570,16 +597,8 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#author -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#author">
+        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#actor"/>
         <rdfs:label xml:lang="en">Author</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/nampi/owl/core#automated_author -->
-
-    <owl:Class rdf:about="http://purl.org/nampi/owl/core#automated_author">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#author"/>
-        <rdfs:label xml:lang="en">Automated author</rdfs:label>
     </owl:Class>
     
 
@@ -587,6 +606,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#date -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#date">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E52_Time-Span"/>
         <rdfs:label xml:lang="en">Date</rdfs:label>
     </owl:Class>
     
@@ -595,6 +615,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#event -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#event">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E89_Propositional_Object"/>
         <rdfs:label xml:lang="en">Event</rdfs:label>
     </owl:Class>
     
@@ -665,6 +686,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#source -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#source">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E31_Document"/>
         <rdfs:label xml:lang="en">Source</rdfs:label>
     </owl:Class>
     
@@ -673,6 +695,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#source_location -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#source_location">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/211015/E73_Information_Object"/>
         <rdfs:label xml:lang="en">Source location</rdfs:label>
     </owl:Class>
     
@@ -690,7 +713,7 @@ Towards an Integrated Approach, in: Digital Scholarship in the Humanities 30 (20
     <!-- http://purl.org/nampi/owl/core#title -->
 
     <owl:Class rdf:about="http://purl.org/nampi/owl/core#title">
-        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#aspect"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/nampi/owl/core#appellation"/>
         <rdfs:label xml:lang="en">Title</rdfs:label>
     </owl:Class>
 </rdf:RDF>
